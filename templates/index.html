@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <table border="1">
+        <form action="/index" method="post">
+            {%  csrf_token %}
+            <P>
+                <lable>用户名:</lable>
+                <input type="text" name="name"/>
+            </P>
+            <P>
+                <lable>密码：</lable>
+                <input type="text" name="function"/>
+            </P>
+            <P><input type="submit" value="提交"/></P>
+        </form>
+        <thead>
+        <tr>
+            <td>用户名</td>
+            <td>密码</td>
+        </tr>
+        </thead>
+        {% for line in form %}
+            <tr>
+                <td>{{ line.name }}</td>
+                <td>{{ line.function }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </body>
+
+</html>
